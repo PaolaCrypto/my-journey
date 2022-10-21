@@ -7,7 +7,11 @@
     <title>PaolaCodes</title>
     <style>
       body {
-        background-color: skyblue;
+        background: linear-gradient(
+          109.6deg,
+          rgb(253, 199, 141) 11.3%,
+          rgb(249, 143, 253) 100.2%
+        );
       }
       h1 {
         text-align: center;
@@ -61,27 +65,84 @@
       }
       .coding-intro-picture:hover {
         filter: contrast(80%);
-        transform: scale(1.2);
+        transform: scale(1.1);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin: 10px 0;
+      }
+      .grip img {
+        width: 100%;
+        border-radius: 6px;
+        object-fit: cover;
+        transition: all 150ms ease-in-out;
+      }
+
+      .grid img:hover {
+        transform: scale(2);
+      }
+
+      .dark {
+        background: radial-gradient(
+          circle at 24.1% 68.8%,
+          rgb(50, 50, 50) 0%,
+          rgb(0, 0, 0) 99.4%
+        );
+        color: white;
+      }
+      .dark .container {
+        background: rgba(255, 255, 255, 0.1);
       }
     </style>
   </head>
   <body>
-    <button class="theme-button">Dark Theme</button>
+    <button class="theme-button">Change Theme</button>
     <div class="container">
-      <h1>This is the story of how a Dominican meets coding</h1>
-      <h2>When Paola meets coding</h2>
+      <h1>What is Coding?</h1>
+      <h2>This is one of my gifts</h2>
       <img
         src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60"
         alt=""
         class="coding-intro-picture"
       />
-      <img
-        src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60"
-        alt=""
-      />
-      <p>this is where I will write a quick story</p>
+      <div class="grid">
+        <img
+          src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60"
+          alt=""
+        />
+        <img
+          src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+          alt=""
+        />
+        <img
+          src="https://images.unsplash.com/photo-1472437774355-71ab6752b434?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJvbnQlMjBlbmQlMjBkZXZlbG9wZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+          alt=""
+        />
+        <img
+          src="https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHRtbCUyRmNzc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+          alt=""
+        />
+      </div>
+      <p>
+        Coding is a list of step-by-step instructions that get computers to do
+        what you want them to do. Coding makes it possible for us to create
+        computer software, games, apps and websites.
+      </p>
       <button>Learn more</button>
       <footer>Coded by Paola Severino</footer>
     </div>
+
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+
+        body.classList.toggle("dark");
+      }
+
+      let themeButton = document.querySelector(".theme-button");
+      themeButton.addEventListener("click", changeTheme);
+    </script>
   </body>
 </html>
